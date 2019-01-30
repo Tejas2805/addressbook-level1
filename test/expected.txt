@@ -156,7 +156,7 @@
 || 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 || 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
 || 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
-|| 
+||
 || 4 persons found!
 || ===================================================
 || Enter command: || [Command entered:  add Esther Potato p/555555 e/esther@notreal.potato]
@@ -169,6 +169,51 @@
 || 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
 || 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
 || 
+|| 5 persons found!
+|| ===================================================
+|| Enter command: || [Command entered:edit]
+|| Invalid command format: edit
+|| edit: Edits a person's property.
+|| 	Parameters: NAME p/12345678
+|| 	Example: edit Tejas Bhuwania p/98765432
+||
+|| ===================================================
+|| Enter command: || [Command entered:edit tejas]
+|| Invalid command format: edit
+|| edit: Edits a person's property.
+|| 	Parameters: NAME p/12345678
+|| 	Example: edit Tejas Bhuwania p/98765432
+||
+|| ===================================================
+|| Enter command: || [Command entered:edit p/1234555 Tejas Bhuwania]
+|| Invalid command format: edit
+|| edit: Edits a person's property.
+|| 	Parameters: NAME p/12345678
+|| 	Example: edit Tejas Bhuwania p/98765432
+||
+|| ===================================================
+|| Enter command: || [Command entered:edit tejas p/12345]
+|| Person edited: null, Phone: null, Email: null
+|| ===================================================
+|| Enter command: || [Command entered:edit Tejas Bhuwania p/1234]
+|| Person edited: null, Phone: null, Email: null
+|| ===================================================
+|| Enter command: || [Command entered:edit Esther Potato e/123@123.com]
+|| Person edited: Esther Potato, Phone: 555555, Email: 123@123.com
+|| ===================================================
+|| Enter command: || [Command entered:edit Esther Potato n/Yashna Bhuwania]
+|| Person edited: Yashna Bhuwania, Phone: 555555, Email: 123@123.com
+|| ===================================================
+|| Enter command: || [Command entered:edit Yashna Bhuwania n/Esther Potato]
+|| Person edited: Esther Potato, Phone: 555555, Email: 123@123.com
+|| ===================================================
+|| Enter command: || [Command entered:list]
+|| 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
+|| 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
+|| 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
+|| 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
+|| 	5. Esther Potato  Phone Number: 555555  Email: 123@123.com
+||
 || 5 persons found!
 || ===================================================
 || Enter command: || [Command entered:  find]
