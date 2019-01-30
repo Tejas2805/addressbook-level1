@@ -455,6 +455,12 @@ public class AddressBook {
     }
 
     private static String executeEditPerson(String commandArgs) {
+        final Optional<String> decodeResult = decodePersonFromStringForEdit(commandArgs);
+
+        if (!decodeResult.isPresent()) {
+            return getMessageForInvalidCommandInput(COMMAND_EDIT_WORD, getUsageInfoForEditCommand());
+        }
+
         String name_of_person = extractNameOfPersonFromEdit(commandArgs);
         int edit_field = extractEditField(commandArgs);
         String edit = extractEditedWord(commandArgs, edit_field);
@@ -963,6 +969,13 @@ public class AddressBook {
         return isPersonDataValid(decodedPerson) ? Optional.of(decodedPerson) : Optional.empty();
     }
 
+    private static Optional<String> decodePersonFromStringForEdit(String encoded) {
+        if(!isDataExtractableForEdit(encoded)){
+            return Optional.empty();
+        }
+        else
+            return Optional.of(encoded);
+    }
     /**
      * Decodes persons from a list of string representations.
      *
@@ -995,6 +1008,14 @@ public class AddressBook {
                 && !splitArgs[0].isEmpty() // non-empty arguments
                 && !splitArgs[1].isEmpty()
                 && !splitArgs[2].isEmpty();
+    }
+
+    private static boolean isDataExtractableForEdit(String data){
+        final String editCommandPrefix = PERSON_DATA_PREFIX_PHONE + '|' + PERSON_DATA_PREFIX_EMAIL + '|' + PERSON_DATA_PREFIX_NAME;
+        final String[] splitArgs = data.trim().split(editCommandPrefix);
+        return splitArgs.length == 2
+                && !splitArgs[0].isEmpty()
+                && !splitArgs[1].isEmpty();
     }
 
     /**
