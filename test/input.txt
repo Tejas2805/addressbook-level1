@@ -42,6 +42,24 @@
   list
 
 ##########################################################
+# test edit person command, setup state for future tests
+##########################################################
+
+  #should give error if not in correct format
+  edit
+  edit tejas
+  edit tejas bhuwanis
+  edit p/1234555 Tejas Bhuwania
+
+  #edits nothing if full name is not entered correctly without case senstivity
+  edit tejas p/12345
+
+  #works correctly if correct format
+  edit TEJAS BHUWANIA p/12345666
+  edit Tejas Bhuwania p/12345
+  edit Tejas Bhuwania e/123@123.com
+  edit Tejas Bhuwania n/Yashna Bhuwania
+##########################################################
 # test find persons command
 ##########################################################
 
